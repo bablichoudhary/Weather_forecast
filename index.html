@@ -14,5 +14,57 @@
                 <h1 class="text-5xl font-extrabold text-white tracking-tight mb-2">Weather Forecast</h1>
                 <p class="text-lg text-gray-200">Get real-time weather updates for any location</p>
             </div>
+             <!-- Search Section -->
+        <div class="bg-blue-700 p-8 rounded-xl shadow-2xl max-w-lg mx-auto transition transform hover:scale-105 fade-in-card">
+            <div class="flex flex-col space-y-4">
+                <label for="cityInput" class="text-lg font-semibold text-white">Search Weather</label>
+                <input 
+                    type="text" 
+                    id="cityInput" 
+                    placeholder="Enter city name" 
+                    class="px-4 py-3 rounded-xl text-black focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200 ease-in-out"
+                >
+                <p id="errorMessage" class="text-red-500 mt-2 hidden"></p>
+                <div class="mt-4">
+                    <label for="recentSearches" class="text-lg font-semibold text-white">Recent Searches</label>
+                    <select 
+                        id="recentSearches" 
+                        class="px-4 py-3 rounded-xl text-black focus:outline-none focus:ring-2 focus:ring-blue-400 w-full transition duration-200 ease-in-out"
+                    >
+                        <option value="" disabled selected>Select a recent search</option>
+                    </select>
+                </div>
+                <div class="flex space-x-4 mt-4">
+                    <button 
+                        id="searchButton" 
+                        class="btn-hover flex-1 px-6 py-3 bg-white text-blue-600 rounded-xl transition duration-200 ease-in-out"
+                    >
+                        Search by City
+                    </button>
+                    <button 
+                        id="locationButton" 
+                        class="btn-hover flex-1 px-6 py-3 bg-white text-blue-600 rounded-xl transition duration-200 ease-in-out"
+                    >
+                        Use Current Location
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+          <!-- Parent Section for Weather and 5-Day Forecast -->
+          <div class="flex flex-col lg:flex-row mt-12 lg:space-x-12 space-y-6 lg:space-y-0 w-full justify-center items-center">
+            <!-- Weather Card Section (Left Side) -->
+            <div id="weatherCards" class="max-w-sm mx-auto bg-blue-700 p-6 rounded-xl shadow-2xl w-full transition transform hover:scale-105 mb-8 lg:mb-0 fade-in-card">
+                <h2 class="text-2xl font-bold text-center mb-4">Current Weather</h2>
+    
+            </div>
+            
+            <!-- 5-Day Forecast Section (Right Side) -->
+            <div class="w-full lg:max-w-full fade-in-card">
+                <h2 class="text-2xl font-semibold mb-4 text-initial">5-Day Forecast</h2>
+                <div id="forecastCards" class="sm:grid sm:grid-cols-1 sm:grid-rows-5 sm:space-y-4 lg:flex lg:flex-row lg:space-x-6 lg:space-y-0 overflow-x-auto"></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html> 
